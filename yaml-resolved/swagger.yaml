@@ -20,8 +20,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/CustomerType"
-            minItems: 3
+              $ref: "#/definitions/PersonObj"
 definitions:
   PersonObj:
     properties:
@@ -29,13 +28,7 @@ definitions:
         type: "string"
       ssn:
         type: "number"
+        example: 123456789
       dob:
         type: "string"
         format: "date"
-  CustomerType:
-    type: "string"
-    description: "Type of customer applicant/shopper"
-    example: "\"Individual\""
-    enum:
-    - "Business"
-    - "Individual"
