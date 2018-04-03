@@ -1,42 +1,39 @@
 ---
-swagger: "2.0"
+swagger: 2.0
 info:
-  description: "Maintain Person data"
-  version: "1.0.0"
-  title: "Person"
-host: "virtserver.swaggerhub.com"
-basePath: "/sirJames/Person/1.0.0"
+  description: Maintain Person data
+  version: 1.0.0
+  title: Person
+host: virtserver.swaggerhub.com
+basePath: /sirJames/Person/1.0.0
 schemes:
-- "https"
+- https
 paths:
   /newPerson:
     post:
-      summary: "Create new person"
-      description: "Create new person"
+      summary: Create new person
+      description: Create new person
       parameters: []
       responses:
         200:
-          description: "OK"
+          description: OK
           schema:
-            type: "array"
+            type: array
             items:
-              $ref: "#/definitions/CustomerType"
+              $ref: '#/definitions/PersonObj'
             minItems: 3
 definitions:
   PersonObj:
     properties:
       name:
-        type: "string"
+        type: string
       ssn:
-        type: "number"
-        example: 123456789
+        type: number
+        example: 1.23456789E8
       dob:
-        type: "string"
-        format: "date"
-  CustomerType:
-    type: "string"
-    description: "Type of customer applicant/shopper"
-    example: "Individual"
-    enum:
-    - "Business"
-    - "Individual"
+        type: string
+        format: date
+    example:
+      dob: 2000-01-23
+      name: name
+      ssn: 1.23456789E8
