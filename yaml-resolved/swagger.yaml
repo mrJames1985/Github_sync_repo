@@ -20,7 +20,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/PersonObj'
+              $ref: '#/definitions/CustomerType'
             minItems: 3
 definitions:
   PersonObj:
@@ -33,8 +33,11 @@ definitions:
       dob:
         type: string
         format: date
-    example:
-      dob: 2000-01-23
-      name: name
-      ssn: 1.23456789E8
+  CustomerType:
+    type: string
+    description: Type of customer applicant/shopper
+    example: Individual
+    enum:
+    - Business
+    - Individual
 x-azure-api-id: sh-1523396730988
