@@ -1,0 +1,45 @@
+---
+swagger: "2.0"
+info:
+  description: "Maintain Person data"
+  version: "1.0.0"
+  title: "Person"
+host: "virtserver.swaggerhub.com"
+basePath: "/sirJames/Person/1.0.0"
+schemes:
+- "https"
+paths:
+  /newPerson:
+    post:
+      summary: "Create new person"
+      description: "Create new person"
+      operationId: "new_person_post"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CustomerType"
+            minItems: 3
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  PersonObj:
+    properties:
+      name:
+        type: "string"
+      ssn:
+        type: "number"
+        example: 123456789
+      dob:
+        type: "string"
+        format: "date"
+  CustomerType:
+    type: "string"
+    description: "Type of customer applicant/shopper"
+    example: "Individual"
+    enum:
+    - "Business"
+    - "Individual"
+x-azure-api-id: "sh-1523396730988"
