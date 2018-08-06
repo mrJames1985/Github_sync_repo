@@ -20,6 +20,7 @@ class CustomerType(Model):
     """
     BUSINESS = "Business"
     INDIVIDUAL = "Individual"
+    GOVERMENT = "Goverment"
 
     def __init__(self):  # noqa: E501
         """CustomerType - a model defined in Swagger

@@ -35,6 +35,9 @@ definitions:
       dob:
         type: "string"
         format: "date"
+      employer:
+        type: "string"
+        example: "SmartBear"
   CustomerType:
     type: "string"
     description: "Type of customer applicant/shopper"
@@ -42,4 +45,5 @@ definitions:
     enum:
     - "Business"
     - "Individual"
+    - "Goverment"
 x-azure-api-id: "sh-1523396730988"

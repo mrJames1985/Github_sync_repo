@@ -15,7 +15,7 @@ class PersonObj(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, name: str=None, ssn: float=None, dob: date=None):  # noqa: E501
+    def __init__(self, name: str=None, ssn: float=None, dob: date=None, employer: str=None):  # noqa: E501
         """PersonObj - a model defined in Swagger
 
         :param name: The name of this PersonObj.  # noqa: E501
@@ -24,22 +24,27 @@ class PersonObj(Model):
         :type ssn: float
         :param dob: The dob of this PersonObj.  # noqa: E501
         :type dob: date
+        :param employer: The employer of this PersonObj.  # noqa: E501
+        :type employer: str
         """
         self.swagger_types = {
             'name': str,
             'ssn': float,
-            'dob': date
+            'dob': date,
+            'employer': str
         }
 
         self.attribute_map = {
             'name': 'name',
             'ssn': 'ssn',
-            'dob': 'dob'
+            'dob': 'dob',
+            'employer': 'employer'
         }
 
         self._name = name
         self._ssn = ssn
         self._dob = dob
+        self._employer = employer
 
     @classmethod
     def from_dict(cls, dikt) -> 'PersonObj':
@@ -114,3 +119,24 @@ class PersonObj(Model):
         """
 
         self._dob = dob
+
+    @property
+    def employer(self) -> str:
+        """Gets the employer of this PersonObj.
+
+
+        :return: The employer of this PersonObj.
+        :rtype: str
+        """
+        return self._employer
+
+    @employer.setter
+    def employer(self, employer: str):
+        """Sets the employer of this PersonObj.
+
+
+        :param employer: The employer of this PersonObj.
+        :type employer: str
+        """
+
+        self._employer = employer
