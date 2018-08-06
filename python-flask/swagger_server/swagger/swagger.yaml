@@ -37,7 +37,6 @@ definitions:
         format: "date"
       employer:
         type: "string"
-        example: "SmartBear"
   CustomerType:
     type: "string"
     description: "Type of customer applicant/shopper"
