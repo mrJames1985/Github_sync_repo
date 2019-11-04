@@ -24,6 +24,26 @@ paths:
               $ref: "#/definitions/CustomerType"
             minItems: 3
       x-swagger-router-controller: "swagger_server.controllers.default_controller"
+  /updatePerson:
+    put:
+      summary: "Create new person"
+      description: "Create new person"
+      operationId: "update_person_put"
+      parameters:
+      - name: "Name"
+        in: "query"
+        description: "person name"
+        required: false
+        type: "string"
+      - name: "employer"
+        in: "query"
+        description: "person employer"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
 definitions:
   PersonObj:
     properties:
@@ -37,6 +57,7 @@ definitions:
         format: "date"
       employer:
         type: "string"
+        example: "SmartBear"
   CustomerType:
     type: "string"
     description: "Type of customer applicant/shopper"

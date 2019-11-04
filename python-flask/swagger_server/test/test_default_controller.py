@@ -23,6 +23,20 @@ class TestDefaultController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
+    def test_update_person_put(self):
+        """Test case for update_person_put
+
+        Create new person
+        """
+        query_string = [('Name', 'Name_example'),
+                        ('employer', 'employer_example')]
+        response = self.client.open(
+            '/sirJames/Person/1.0.0/updatePerson',
+            method='PUT',
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
 
 if __name__ == '__main__':
     import unittest
